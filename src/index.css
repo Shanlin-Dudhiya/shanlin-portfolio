@@ -94,4 +94,72 @@ body {
   .animate-fade-up {
     animation: none;
   }
+  .blob {
+    animation: none;
+  }
+}
+
+/* Bento grid tiles */
+.bento-tile {
+  @apply bg-[var(--color-surface)] border border-[var(--color-border)] rounded-3xl transition-all duration-300;
+}
+
+.bento-tile:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+}
+
+.bento-tile.accent {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  background: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)),
+    var(--color-surface)
+  );
+}
+
+.stat-tile {
+  @apply flex flex-col items-center justify-center text-center p-4;
+}
+
+.stat-value {
+  @apply text-3xl sm:text-4xl font-bold;
+}
+
+.stat-label {
+  @apply text-xs text-muted mt-1 uppercase tracking-wide;
+}
+
+/* Animated gradient blobs for hero background */
+@keyframes drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.1); }
+}
+
+@keyframes drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(1.05); }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.blob-1 {
+  animation: drift-1 14s ease-in-out infinite;
+}
+
+.blob-2 {
+  animation: drift-2 18s ease-in-out infinite;
+}
+
+/* Subtle dot-grid texture */
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-body) 25%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 40%, transparent 100%);
 }

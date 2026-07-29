@@ -4,7 +4,7 @@ import { profile } from "../data";
 export default function Contact() {
   return (
     <Section id="contact" eyebrow="Contact" title="Let's build something">
-      <div className="card p-8 sm:p-12 text-center">
+      <div className="bento-tile accent p-8 sm:p-12 text-center">
         <p className="text-body max-w-xl mx-auto mb-8">
           I'm open to full stack developer roles and freelance projects. Reach out
           and I'll get back to you.

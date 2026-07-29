@@ -6,7 +6,7 @@ export default function Education() {
     <Section id="education" eyebrow="Education" title="Academic background">
       <div className="grid sm:grid-cols-2 gap-6">
         {education.map((edu) => (
-          <div key={edu.school} className="card p-6">
+          <div key={edu.school} className="bento-tile p-6">
             <h3 className="text-heading font-medium">{edu.school}</h3>
             <p className="text-sm text-body mt-1">{edu.degree}</p>
             <div className="flex justify-between text-sm text-muted mt-4">

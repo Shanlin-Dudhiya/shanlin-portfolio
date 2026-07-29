@@ -3,15 +3,20 @@ import { profile } from "../data";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
+      <div className="absolute inset-0 dot-grid" />
       <div
-        className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full opacity-20 blur-3xl"
+        className="blob blob-1 -top-32 left-1/4 h-[420px] w-[420px] opacity-25"
         style={{ background: "radial-gradient(circle, var(--color-accent), transparent 70%)" }}
+      />
+      <div
+        className="blob blob-2 top-10 right-0 h-[380px] w-[380px] opacity-20"
+        style={{ background: "radial-gradient(circle, var(--color-accent-2), transparent 70%)" }}
       />
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32 relative">
         <p className="animate-fade-up text-sm font-medium text-[var(--color-accent-2)] tracking-wide uppercase">
           {profile.title}
         </p>
-        <h1 className="animate-fade-up mt-4 text-4xl sm:text-6xl font-semibold tracking-tight text-heading max-w-3xl">
+        <h1 className="animate-fade-up mt-4 text-5xl sm:text-7xl font-bold tracking-tight text-heading max-w-3xl">
           Hi, I'm <span className="gradient-text">{profile.name}</span>.
           <br />
           I build fast, scalable web apps.
