@@ -29,7 +29,7 @@ export default function About() {
         <div className="md:col-span-2 md:row-span-2 bento-tile p-8 flex flex-col justify-center">
           <p className="text-body leading-relaxed">
             I'm a full stack developer based in Ahmedabad, India, focused on the MERN
-            stack. Over the last couple of years I've shipped production sites end to
+            stack. Over the past year I've shipped production sites end to
             end — from React frontends and Express/Node APIs to MongoDB and SQL data
             layers, deployed and maintained on real Linux servers. I care about clean
             UI, fast load times, and APIs that don't fall over.
