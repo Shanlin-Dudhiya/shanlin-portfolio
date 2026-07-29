@@ -81,11 +81,17 @@ export default function About() {
               New
             </span>
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-3">
             {aiSkills.items.map((item) => (
               <SkillChip key={item.name} item={item} />
             ))}
           </div>
+          <a
+            href="#projects"
+            className="text-xs text-[var(--color-accent-2)] hover:underline"
+          >
+            Built into "Chat with a Website" →
+          </a>
         </div>
 
         {/* Tools & Platforms */}

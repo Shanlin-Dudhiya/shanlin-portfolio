@@ -119,7 +119,7 @@ export const projects = [
     name: "Chat with a Website",
     stack: "Next.js, PostgreSQL (pgvector), Gemini, Voyage AI",
     points: [
-      "Built a full crawl-and-RAG pipeline: a same-domain, robots.txt-aware BFS crawler indexes a site's pages into chunked vector embeddings.",
+      "Lets anyone ask questions about a website in plain English instead of digging through pages themselves — built a full crawl-and-RAG pipeline where a same-domain, robots.txt-aware BFS crawler indexes a site's pages into chunked vector embeddings.",
       "Implemented retrieval-augmented generation with Google Gemini, using structured JSON output so every answer cites real retrieved sources instead of a hallucinated URL.",
       "Deployed the whole stack — Next.js app, Postgres/pgvector via Neon, and free-tier embedding/generation APIs — to Vercel at zero cost.",
     ],
@@ -130,7 +130,7 @@ export const projects = [
     name: "Bulk Mail Sender",
     stack: "React, Node.js, Express.js, Nodemailer",
     points: [
-      "Built a full-stack tool that parses uploaded Excel/Sheets contact lists via xlsx, extracting valid email addresses from any cell by pattern-matching, with no fixed column format required.",
+      "Turns a spreadsheet of contacts into a finished bulk-email campaign in minutes — built a full-stack tool that parses uploaded Excel/Sheets files via xlsx, extracting valid email addresses from any cell by pattern-matching, with no fixed column format required.",
       "Implemented bulk sending through Gmail SMTP (Nodemailer) with optional file attachments (Multer) and per-recipient delivery status (sent/failed) returned to the sender.",
     ],
     link: "https://github.com/Shanlin-Dudhiya/mailer",
