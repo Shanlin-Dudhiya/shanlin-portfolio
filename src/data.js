@@ -8,7 +8,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/shanlin-dudhiya/",
   github: "https://github.com/Shanlin-Dudhiya",
   summary:
-    "Dedicated Full Stack Developer with hands-on experience building scalable web applications using React.js, Express.js, Node.js, and MongoDB. Proven track record in developing RESTful APIs, optimizing performance, and managing production deployments on Linux servers. Passionate about modern JavaScript frameworks and industry best practices.",
+    "Dedicated Full Stack Developer with hands-on experience building scalable web applications using React.js, Express.js, Node.js, and MongoDB. Proven track record in developing RESTful APIs, optimizing performance, and managing production deployments on Linux servers. Recently extended into AI-powered applications, building a retrieval-augmented generation (RAG) pipeline with vector search and LLM APIs. Passionate about modern JavaScript frameworks and industry best practices.",
 };
 
 export const skills = [
@@ -22,11 +22,26 @@ export const skills = [
   },
   {
     category: "Databases",
-    items: ["MySQL", "MS SQL Server", "MongoDB"],
+    items: ["MySQL", "MS SQL Server", "MongoDB", "PostgreSQL (pgvector)"],
+  },
+  {
+    category: "AI / LLM",
+    items: ["Google Gemini API", "Voyage AI Embeddings", "Retrieval-Augmented Generation (RAG)"],
   },
   {
     category: "Tools & Platforms",
-    items: ["GitHub", "VS Code", "cPanel", "FileZilla", "REST APIs"],
+    items: [
+      "GitHub",
+      "VS Code",
+      "cPanel",
+      "FileZilla",
+      "REST APIs",
+      "Claude AI",
+      "ChatGPT",
+      "Gemini",
+      "Lovable",
+      "Copilot",
+    ],
   },
   {
     category: "Cloud / DevOps",
@@ -92,10 +107,10 @@ export const projects = [
   },
   {
     name: "Bulk Mail Sender",
-    stack: "Node.js, Nodemailer, Express.js",
+    stack: "React, Node.js, Express.js, Nodemailer",
     points: [
-      "Built an automated bulk email dispatch system capable of sending personalized emails to large contact lists.",
-      "Implemented retry logic and delivery tracking to maximize inbox placement rates and ensure reliable communication.",
+      "Built a full-stack tool that parses uploaded Excel/Sheets contact lists via xlsx, extracting valid email addresses from any cell by pattern-matching, with no fixed column format required.",
+      "Implemented bulk sending through Gmail SMTP (Nodemailer) with optional file attachments (Multer) and per-recipient delivery status (sent/failed) returned to the sender.",
     ],
     link: "https://github.com/Shanlin-Dudhiya/mailer",
   },
