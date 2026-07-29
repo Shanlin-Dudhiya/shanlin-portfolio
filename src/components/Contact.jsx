@@ -19,7 +19,7 @@ export default function Contact() {
           <a
             href={profile.whatsapp}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-medium text-subtle hover:border-[var(--color-border-hover)] transition"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -30,10 +30,10 @@ export default function Contact() {
           </a>
         </div>
         <div className="flex justify-center gap-6 mt-8 text-sm text-muted">
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-heading transition-colors">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-heading transition-colors">
             LinkedIn
           </a>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-heading transition-colors">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="hover:text-heading transition-colors">
             GitHub
           </a>
         </div>

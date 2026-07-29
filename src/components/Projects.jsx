@@ -19,7 +19,7 @@ export default function Projects() {
                   <a
                     href={project.demoLink}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-xs text-body hover:text-heading transition-colors whitespace-nowrap"
                   >
                     Live Demo ↗
@@ -29,7 +29,7 @@ export default function Projects() {
                   <a
                     href={project.link}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="text-xs text-body hover:text-heading transition-colors whitespace-nowrap"
                   >
                     GitHub ↗
