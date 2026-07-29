@@ -1,0 +1,50 @@
+import {
+  SiJavascript,
+  SiHtml5,
+  SiCss,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiNextdotjs,
+  SiMysql,
+  SiMongodb,
+  SiPostgresql,
+  SiGithub,
+  SiCpanel,
+  SiFilezilla,
+  SiClaude,
+  SiGooglegemini,
+  SiGithubcopilot,
+  SiLinux,
+  SiVercel,
+  SiGithubactions,
+} from "react-icons/si";
+import { TbBrandVscode, TbBrandOpenai } from "react-icons/tb";
+import { FaMicrosoft } from "react-icons/fa6";
+
+const skillIcons = {
+  javascript: SiJavascript,
+  html5: SiHtml5,
+  css3: SiCss,
+  react: SiReact,
+  nodejs: SiNodedotjs,
+  express: SiExpress,
+  nextjs: SiNextdotjs,
+  mysql: SiMysql,
+  mssql: FaMicrosoft,
+  mongodb: SiMongodb,
+  postgresql: SiPostgresql,
+  gemini: SiGooglegemini,
+  github: SiGithub,
+  vscode: TbBrandVscode,
+  cpanel: SiCpanel,
+  filezilla: SiFilezilla,
+  claude: SiClaude,
+  openai: TbBrandOpenai,
+  copilot: SiGithubcopilot,
+  linux: SiLinux,
+  vercel: SiVercel,
+  githubactions: SiGithubactions,
+};
+
+export default skillIcons;

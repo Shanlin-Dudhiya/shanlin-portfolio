@@ -8,7 +8,7 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="card p-6 sm:p-8 hover:border-[var(--color-border-hover)] transition-colors flex flex-col"
+            className="card p-6 sm:p-8 hover:border-[var(--color-border-hover)] hover:-translate-y-1 hover:shadow-xl transition-all flex flex-col"
           >
             <div className="flex items-center justify-between gap-2 mb-1">
               <h3 className="text-heading font-medium text-lg">{project.name}</h3>
