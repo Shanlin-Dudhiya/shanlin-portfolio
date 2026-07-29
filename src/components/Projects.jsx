@@ -12,16 +12,28 @@ export default function Projects() {
           >
             <div className="flex items-center justify-between gap-2 mb-1">
               <h3 className="text-white font-medium text-lg">{project.name}</h3>
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-xs text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
-                >
-                  GitHub ↗
-                </a>
-              )}
+              <div className="flex items-center gap-3 shrink-0">
+                {project.demoLink && (
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
+                  >
+                    Live Demo ↗
+                  </a>
+                )}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-xs text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
+                  >
+                    GitHub ↗
+                  </a>
+                )}
+              </div>
             </div>
             <p className="text-sm text-[var(--color-accent-2)] mb-4">{project.stack}</p>
             <ul className="space-y-2 mt-auto">

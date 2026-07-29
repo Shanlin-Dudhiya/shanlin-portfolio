@@ -80,6 +80,17 @@ export const experience = [
 
 export const projects = [
   {
+    name: "Chat with a Website",
+    stack: "Next.js, PostgreSQL (pgvector), Gemini, Voyage AI",
+    points: [
+      "Built a full crawl-and-RAG pipeline: a same-domain, robots.txt-aware BFS crawler indexes a site's pages into chunked vector embeddings.",
+      "Implemented retrieval-augmented generation with Google Gemini, using structured JSON output so every answer cites real retrieved sources instead of a hallucinated URL.",
+      "Deployed the whole stack — Next.js app, Postgres/pgvector via Neon, and free-tier embedding/generation APIs — to Vercel at zero cost.",
+    ],
+    link: "https://github.com/Shanlin-Dudhiya/chat-with-website",
+    demoLink: "https://chat-with-website-kappa.vercel.app/",
+  },
+  {
     name: "Bookworm",
     stack: "HTML, CSS, JavaScript",
     points: [
