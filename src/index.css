@@ -4,9 +4,27 @@
   --color-bg: #0a0a0f;
   --color-surface: #12121a;
   --color-border: #24242f;
+  --color-border-hover: #3f3f46;
   --color-accent: #8b5cf6;
   --color-accent-2: #22d3ee;
+  --color-heading: #ffffff;
+  --color-body: #a1a1aa;
+  --color-muted: #71717a;
+  --color-subtle: #d4d4d8;
   --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+:root[data-theme="light"] {
+  --color-bg: #f7f7fb;
+  --color-surface: #ffffff;
+  --color-border: #e4e4e7;
+  --color-border-hover: #c4c4cc;
+  --color-accent: #7c3aed;
+  --color-accent-2: #0e7490;
+  --color-heading: #0a0a0f;
+  --color-body: #52525b;
+  --color-muted: #6b7280;
+  --color-subtle: #3f3f46;
 }
 
 html {
@@ -16,7 +34,7 @@ html {
 body {
   margin: 0;
   background: var(--color-bg);
-  color: #e4e4e7;
+  color: var(--color-body);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -27,7 +45,7 @@ body {
 }
 
 .section-heading {
-  @apply text-3xl sm:text-4xl font-semibold tracking-tight text-white;
+  @apply text-3xl sm:text-4xl font-semibold tracking-tight text-heading;
 }
 
 .gradient-text {

@@ -8,18 +8,18 @@ export default function Experience() {
         {experience.map((job) => (
           <div
             key={job.company}
-            className="card p-6 sm:p-8 hover:border-zinc-600 transition-colors"
+            className="card p-6 sm:p-8 hover:border-[var(--color-border-hover)] transition-colors"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-              <h3 className="text-white font-medium text-lg">{job.role}</h3>
-              <span className="text-sm text-zinc-500">{job.period}</span>
+              <h3 className="text-heading font-medium text-lg">{job.role}</h3>
+              <span className="text-sm text-muted">{job.period}</span>
             </div>
             <p className="text-sm text-[var(--color-accent-2)] mb-4">
               {job.company} · {job.location}
             </p>
             <ul className="space-y-2">
               {job.points.map((point, i) => (
-                <li key={i} className="text-zinc-400 text-sm flex gap-2">
+                <li key={i} className="text-body text-sm flex gap-2">
                   <span className="text-[var(--color-accent)] mt-1">▹</span>
                   <span>{point}</span>
                 </li>

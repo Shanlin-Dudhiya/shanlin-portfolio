@@ -8,17 +8,17 @@ export default function Projects() {
         {projects.map((project) => (
           <div
             key={project.name}
-            className="card p-6 sm:p-8 hover:border-zinc-600 transition-colors flex flex-col"
+            className="card p-6 sm:p-8 hover:border-[var(--color-border-hover)] transition-colors flex flex-col"
           >
             <div className="flex items-center justify-between gap-2 mb-1">
-              <h3 className="text-white font-medium text-lg">{project.name}</h3>
+              <h3 className="text-heading font-medium text-lg">{project.name}</h3>
               <div className="flex items-center gap-3 shrink-0">
                 {project.demoLink && (
                   <a
                     href={project.demoLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
+                    className="text-xs text-body hover:text-heading transition-colors whitespace-nowrap"
                   >
                     Live Demo ↗
                   </a>
@@ -28,7 +28,7 @@ export default function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs text-zinc-400 hover:text-white transition-colors whitespace-nowrap"
+                    className="text-xs text-body hover:text-heading transition-colors whitespace-nowrap"
                   >
                     GitHub ↗
                   </a>
@@ -38,7 +38,7 @@ export default function Projects() {
             <p className="text-sm text-[var(--color-accent-2)] mb-4">{project.stack}</p>
             <ul className="space-y-2 mt-auto">
               {project.points.map((point, i) => (
-                <li key={i} className="text-zinc-400 text-sm flex gap-2">
+                <li key={i} className="text-body text-sm flex gap-2">
                   <span className="text-[var(--color-accent)] mt-1">▹</span>
                   <span>{point}</span>
                 </li>

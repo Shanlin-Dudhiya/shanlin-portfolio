@@ -11,12 +11,12 @@ export default function Hero() {
         <p className="animate-fade-up text-sm font-medium text-[var(--color-accent-2)] tracking-wide uppercase">
           {profile.title}
         </p>
-        <h1 className="animate-fade-up mt-4 text-4xl sm:text-6xl font-semibold tracking-tight text-white max-w-3xl">
+        <h1 className="animate-fade-up mt-4 text-4xl sm:text-6xl font-semibold tracking-tight text-heading max-w-3xl">
           Hi, I'm <span className="gradient-text">{profile.name}</span>.
           <br />
           I build fast, scalable web apps.
         </h1>
-        <p className="animate-fade-up mt-6 max-w-2xl text-lg text-zinc-400">
+        <p className="animate-fade-up mt-6 max-w-2xl text-lg text-body">
           {profile.summary}
         </p>
         <div className="animate-fade-up mt-8 flex flex-wrap items-center gap-4">
@@ -28,12 +28,12 @@ export default function Hero() {
           </a>
           <a
             href="#projects"
-            className="inline-flex items-center rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-medium text-zinc-200 hover:border-zinc-500 transition"
+            className="inline-flex items-center rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-medium text-subtle hover:border-[var(--color-border-hover)] transition"
           >
             View work
           </a>
         </div>
-        <p className="animate-fade-up mt-8 text-sm text-zinc-500">{profile.location}</p>
+        <p className="animate-fade-up mt-8 text-sm text-muted">{profile.location}</p>
       </div>
     </section>
   );
