@@ -91,6 +91,15 @@ export const projects = [
     demoLink: "https://chat-with-website-kappa.vercel.app/",
   },
   {
+    name: "Bulk Mail Sender",
+    stack: "Node.js, Nodemailer, Express.js",
+    points: [
+      "Built an automated bulk email dispatch system capable of sending personalized emails to large contact lists.",
+      "Implemented retry logic and delivery tracking to maximize inbox placement rates and ensure reliable communication.",
+    ],
+    link: "https://github.com/Shanlin-Dudhiya/mailer",
+  },
+  {
     name: "Bookworm",
     stack: "HTML, CSS, JavaScript",
     points: [
@@ -109,15 +118,6 @@ export const projects = [
       "Added a Buy Now checkout flow that collects delivery details and processes payment through a single online-payment option.",
     ],
     link: "https://github.com/Shanlin-Dudhiya/lr-photo-presets",
-  },
-  {
-    name: "Bulk Mail Sender",
-    stack: "Node.js, Nodemailer, Express.js",
-    points: [
-      "Built an automated bulk email dispatch system capable of sending personalized emails to large contact lists.",
-      "Implemented retry logic and delivery tracking to maximize inbox placement rates and ensure reliable communication.",
-    ],
-    link: "https://github.com/Shanlin-Dudhiya/mailer",
   },
 ];
 
