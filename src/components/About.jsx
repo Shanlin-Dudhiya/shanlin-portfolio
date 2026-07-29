@@ -46,7 +46,7 @@ export default function About() {
           <span className="stat-label">Projects Shipped</span>
         </div>
         <div className="bento-tile stat-tile">
-          <span className="stat-value gradient-text">2+</span>
+          <span className="stat-value gradient-text">1+</span>
           <span className="stat-label">Years Experience</span>
         </div>
         <div className="bento-tile stat-tile">
