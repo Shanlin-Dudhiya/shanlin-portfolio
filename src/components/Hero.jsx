@@ -32,6 +32,16 @@ export default function Hero() {
           >
             View work
           </a>
+          <a
+            href={profile.resumeUrl}
+            download
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-medium text-subtle hover:border-[var(--color-border-hover)] transition"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Download Resume
+          </a>
         </div>
         <p className="animate-fade-up mt-8 text-sm text-muted">{profile.location}</p>
       </div>

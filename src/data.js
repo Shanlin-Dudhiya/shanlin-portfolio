@@ -7,6 +7,7 @@ export const profile = {
   email: "shanlindudhiya06@gmail.com",
   linkedin: "https://www.linkedin.com/in/shanlin-dudhiya/",
   github: "https://github.com/Shanlin-Dudhiya",
+  resumeUrl: "/Shanlin_Dudhiya_Resume.pdf",
   summary:
     "Dedicated Full Stack Developer with hands-on experience building scalable web applications using React.js, Express.js, Node.js, and MongoDB. Proven track record in developing RESTful APIs, optimizing performance, and managing production deployments on Linux servers. Recently extended into AI-powered applications, building a retrieval-augmented generation (RAG) pipeline with vector search and LLM APIs. Passionate about modern JavaScript frameworks and industry best practices.",
 };
