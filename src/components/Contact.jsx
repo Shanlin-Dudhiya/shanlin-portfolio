@@ -1,41 +1,295 @@
+import { useState, useEffect } from "react";
 import Section from "./Section";
 import { profile } from "../data";
+import {
+  FiMail,
+  FiCopy,
+  FiCheck,
+  FiSend,
+  FiClock,
+  FiMapPin,
+  FiExternalLink,
+} from "react-icons/fi";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export default function Contact() {
+  const [copied, setCopied] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [formSent, setFormSent] = useState(false);
+
+  // Live Local Time in Ahmedabad (IST)
+  const [localTime, setLocalTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const options = {
+        timeZone: "Asia/Kolkata",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
+      };
+      setLocalTime(new Intl.DateTimeFormat("en-US", options).format(new Date()));
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(profile.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2200);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const mailtoSubject = encodeURIComponent(
+      formData.subject || `Portfolio Inquiry from ${formData.name || "Recruiter"}`
+    );
+    const mailtoBody = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:${profile.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+    setFormSent(true);
+  };
+
   return (
-    <Section id="contact" eyebrow="Contact" title="Let's build something">
-      <div className="bento-tile accent p-8 sm:p-12 text-center">
-        <p className="text-body max-w-xl mx-auto mb-8">
-          I'm open to full stack developer roles and freelance projects. Reach out
-          and I'll get back to you.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition"
-          >
-            {profile.email}
-          </a>
-          <a
-            href={profile.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-6 py-3 text-sm font-medium text-subtle hover:border-[var(--color-border-hover)] transition"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-              <path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.996.586 3.85 1.594 5.412L2 22l4.688-1.567A9.96 9.96 0 0 0 12.004 22C17.522 22 22 17.514 22 12.004 22 6.486 17.522 2 12.004 2zm0 18.152a8.13 8.13 0 0 1-4.145-1.135l-.297-.176-3.088 1.033 1.049-3.024-.194-.31a8.12 8.12 0 0 1-1.24-4.336c0-4.49 3.654-8.144 8.144-8.144s8.144 3.654 8.144 8.144-3.654 8.148-8.144 8.148z" />
-            </svg>
-            {profile.phone}
-          </a>
+    <Section
+      id="contact"
+      eyebrow="Get In Touch"
+      title="Let's Build Something Together"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* Left: Contact Info & Local Status */}
+        <div className="lg:col-span-5 space-y-6">
+          <div className="bento-tile p-6 sm:p-8 space-y-6">
+            <div>
+              <h3 className="text-xl font-bold text-heading mb-2">
+                Let's talk opportunities.
+              </h3>
+              <p className="text-body text-sm leading-relaxed">
+                Whether you have an open Full Stack Developer role, need a custom MERN application,
+                or want to collaborate on AI/RAG architectures, my inbox is always open.
+              </p>
+            </div>
+
+            {/* Live Ahmedabad Time Card */}
+            <div className="p-4 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="p-2 rounded-xl bg-violet-500/10 text-[var(--color-accent)] border border-violet-500/20">
+                  <FiClock size={16} />
+                </span>
+                <div>
+                  <span className="text-xs text-muted block">Ahmedabad (IST) Time</span>
+                  <span className="text-sm font-bold font-mono text-heading">
+                    {localTime || "12:00:00 PM"}
+                  </span>
+                </div>
+              </div>
+              <span className="text-[11px] font-semibold text-emerald-400 bg-emerald-950/40 border border-emerald-800/40 px-2.5 py-1 rounded-full">
+                ● Available
+              </span>
+            </div>
+
+            {/* Quick Connect List */}
+            <div className="space-y-3">
+              {/* Email */}
+              <div className="p-3.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-between gap-2">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="p-2 rounded-lg bg-[var(--color-surface)] text-[var(--color-accent-2)]">
+                    <FiMail size={16} />
+                  </span>
+                  <div className="min-w-0">
+                    <span className="text-[11px] text-muted block uppercase font-medium">Email</span>
+                    <a
+                      href={`mailto:${profile.email}`}
+                      className="text-xs sm:text-sm font-semibold text-heading truncate block hover:text-[var(--color-accent)] transition"
+                    >
+                      {profile.email}
+                    </a>
+                  </div>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="p-2 rounded-lg hover:bg-[var(--color-surface)] text-subtle hover:text-heading transition cursor-pointer"
+                  title="Copy email to clipboard"
+                >
+                  {copied ? <FiCheck className="text-emerald-400" size={16} /> : <FiCopy size={16} />}
+                </button>
+              </div>
+
+              {/* Phone / WhatsApp */}
+              <div className="p-3.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-between gap-2">
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="p-2 rounded-lg bg-[var(--color-surface)] text-emerald-400">
+                    <FaWhatsapp size={16} />
+                  </span>
+                  <div className="min-w-0">
+                    <span className="text-[11px] text-muted block uppercase font-medium">WhatsApp / Phone</span>
+                    <a
+                      href={profile.whatsapp}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs sm:text-sm font-semibold text-heading truncate block hover:text-emerald-400 transition"
+                    >
+                      {profile.phone}
+                    </a>
+                  </div>
+                </div>
+                <a
+                  href={profile.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="p-2 rounded-lg hover:bg-[var(--color-surface)] text-subtle hover:text-emerald-400 transition"
+                  title="Chat on WhatsApp"
+                >
+                  <FiExternalLink size={16} />
+                </a>
+              </div>
+
+              {/* Location */}
+              <div className="p-3.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center gap-3">
+                <span className="p-2 rounded-lg bg-[var(--color-surface)] text-rose-400">
+                  <FiMapPin size={16} />
+                </span>
+                <div>
+                  <span className="text-[11px] text-muted block uppercase font-medium">Location</span>
+                  <span className="text-xs sm:text-sm font-semibold text-heading">
+                    {profile.location}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Buttons */}
+            <div className="pt-4 border-t border-[var(--color-border)] flex items-center justify-between text-xs">
+              <span className="text-muted">Find me on:</span>
+              <div className="flex items-center gap-2">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-subtle hover:text-heading transition"
+                >
+                  <FaGithub size={13} />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--color-bg)] border border-[var(--color-border)] hover:border-[var(--color-accent)] text-subtle hover:text-heading transition"
+                >
+                  <FaLinkedin size={13} />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center gap-6 mt-8 text-sm text-muted">
-          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-heading transition-colors">
-            LinkedIn
-          </a>
-          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="hover:text-heading transition-colors">
-            GitHub
-          </a>
+
+        {/* Right: Quick Direct Email Form */}
+        <div className="lg:col-span-7">
+          <div className="bento-tile p-6 sm:p-8">
+            <h3 className="text-xl font-bold text-heading mb-1">
+              Send a Direct Message
+            </h3>
+            <p className="text-xs text-muted mb-6">
+              Fill out the details below to open a pre-composed message in your email client.
+            </p>
+
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-semibold text-heading block mb-1.5">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    placeholder="e.g. Alex Johnson"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] text-xs sm:text-sm text-heading outline-none transition"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold text-heading block mb-1.5">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    placeholder="alex@company.com"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] text-xs sm:text-sm text-heading outline-none transition"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-xs font-semibold text-heading block mb-1.5">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formData.subject}
+                  onChange={(e) =>
+                    setFormData({ ...formData, subject: e.target.value })
+                  }
+                  placeholder="Job Opportunity / Project Collaboration"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] text-xs sm:text-sm text-heading outline-none transition"
+                />
+              </div>
+
+              <div>
+                <label className="text-xs font-semibold text-heading block mb-1.5">
+                  Message
+                </label>
+                <textarea
+                  rows={4}
+                  required
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                  placeholder="Hi Shanlin, I came across your portfolio and wanted to discuss..."
+                  className="w-full px-4 py-2.5 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] focus:border-[var(--color-accent)] text-xs sm:text-sm text-heading outline-none transition resize-none"
+                />
+              </div>
+
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+                <span className="text-xs text-muted">
+                  Typically replies within a few hours.
+                </span>
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] text-white text-xs sm:text-sm font-semibold transition shadow-md shadow-violet-500/20 cursor-pointer"
+                >
+                  <span>Send Message</span>
+                  <FiSend size={14} />
+                </button>
+              </div>
+
+              {formSent && (
+                <p className="text-xs text-emerald-400 mt-2 font-medium">
+                  ✓ Opening mail client with your inquiry... You can also email directly at {profile.email}.
+                </p>
+              )}
+            </form>
+          </div>
         </div>
       </div>
     </Section>

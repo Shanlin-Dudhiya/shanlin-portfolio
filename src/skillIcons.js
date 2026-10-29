@@ -19,11 +19,13 @@ import {
   SiVercel,
   SiGithubactions,
 } from "react-icons/si";
-import { TbBrandVscode, TbBrandOpenai } from "react-icons/tb";
-import { FaMicrosoft } from "react-icons/fa6";
+import { TbBrandVscode, TbBrandOpenai, TbApi, TbBrain, TbVectorTriangle } from "react-icons/tb";
+import { FaMicrosoft, FaDatabase, FaTerminal, FaWandMagicSparkles } from "react-icons/fa6";
+import { FiLock, FiCpu } from "react-icons/fi";
 
 const skillIcons = {
   javascript: SiJavascript,
+  sql: FaDatabase,
   html5: SiHtml5,
   css3: SiCss,
   react: SiReact,
@@ -35,14 +37,21 @@ const skillIcons = {
   mongodb: SiMongodb,
   postgresql: SiPostgresql,
   gemini: SiGooglegemini,
+  voyage: TbVectorTriangle,
+  rag: TbBrain,
+  vector: FiCpu,
   github: SiGithub,
   vscode: TbBrandVscode,
   cpanel: SiCpanel,
   filezilla: SiFilezilla,
+  api: TbApi,
   claude: SiClaude,
   openai: TbBrandOpenai,
+  lovable: FaWandMagicSparkles,
   copilot: SiGithubcopilot,
   linux: SiLinux,
+  ssl: FiLock,
+  ssh: FaTerminal,
   vercel: SiVercel,
   githubactions: SiGithubactions,
 };
